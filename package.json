@@ -24,5 +24,12 @@
   "bugs": {
     "url": "https://github.com/jordanbrauer/jordanbrauer.github.io/issues"
   },
-  "homepage": "https://github.com/jordanbrauer/jordanbrauer.github.io#readme"
+  "homepage": "https://github.com/jordanbrauer/jordanbrauer.github.io#readme",
+  "dependencies": {
+    "font-awesome": "^4.6.3",
+    "foundation-sites": "^6.2.4-rc1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
 }
