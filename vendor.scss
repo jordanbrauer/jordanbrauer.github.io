@@ -1,0 +1,12 @@
+---
+---
+// vendor.scss
+
+// Foundation Sites =============================
+//
+@import 'foundation/foundation';
+@include foundation-everything;
+
+// Font Awesome =================================
+//
+@import 'font-awesome/font-awesome';

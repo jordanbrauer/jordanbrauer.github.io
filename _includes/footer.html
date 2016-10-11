@@ -1,14 +1,38 @@
-    <!-- = main content = -->
-    <!-- v Footer v -->
+      <div class="row expanded">
+        <footer class="footer" style="padding: 2rem 0; background: #e6e6e6;">
+          <div class="row">
+            <div class="columns small-12 medium-12 large-3">
+              <h6 class="subheader">Contact me:</h6>
+              <ul class="menu vertical medium-horizontal">
+                <li><a href="mailto:info@jordanbrauer.ca"><i class="fa fa-lg fa-at"></i> info@jordanbrauer.ca</a></li>
+              </ul>
+            </div>
+            <div class="columns small-12 medium-12 large-3">
+              {% include social.html %}
+            </div> <!-- /.column -->
+            <div class="columns small-12 medium-12 large-6">
+              <h6 class="subheader">Other links:</h6>
+              <ul class="menu vertical medium-horizontal">
+                <li><a href="#">View source on GitHub</a></li>
+                <li><a href="#">{{ site.name }} &copy; 2016</a></li>
+              </ul>
+            </div> <!-- /.column -->
+          </div> <!-- /.row -->
 
-    <footer>
-      {% include social.html %}
-    </footer>
+          <div class="row" style="font-size: 12px">
+          </div> <!-- /.row -->
+        </footer>
+      </div> <!-- /.row -->
+
+    </div> <!-- /#grid -->
 
     <!-- scripts -->
+    <script type="text/javascript" src="/js/vendor/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/vendor/foundation.min.js"></script>
+    <script type="text/javascript">
+      $(document).foundation();
+    </script>
     <!-- include google analytics -->
-    {% if site.google_analytics %}
-      {% include analytics.html %}
-    {% endif }
+    {% include analytics.html %}
   </body>
 </html>

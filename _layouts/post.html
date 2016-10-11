@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+<div class="row">
+  <div class="columns small-12 medium-12 large-12">
+    <article class="post">
+
+      <!-- post title, category, publish date & author -->
+      <h1>{{ page.title }} <small>– in {{ page.category }}</small></h1>
+
+      <!-- post content -->
+      <div class="entry">
+        {{ content }}
+      </div>
+
+      <!-- post publish date & author -->
+      <p class="date">
+        Published on {{ page.date | date: "%B %e, %Y" }} by {{ page.author }}
+      </p>
+
+      <!-- post tags -->
+      {% if page.tags %}
+      <p class="tags">
+        Tags:
+        {% for tag in page.tags %}
+        <span class="label">{{ tag }}</span>
+        {% endfor %}
+      </p>
+      {% endif %}
+
+      <!-- discuss -->
+      {% if site.discuss %}
+      {% include disqus.html %}
+      {% endif %}
+
+    </article>
+  </div>
+</div>

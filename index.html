@@ -1,0 +1,117 @@
+---
+title: Home
+layout: default
+---
+
+<!-- Recent Posts -->
+<div class="row column">
+  <h3>Recent Blog Posts</h3>
+</div>
+
+<div class="row">
+  <div class="columns small-12 medium-12 large-12">
+    <div class="posts">
+      {% for post in site.posts limit: 3 %}
+        <article class="post card">
+
+          <h3>
+            <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+            <small style="font-size:1.25rem;">{{ post.date | date: "%B %e, %Y" }}</small>
+          </h3>
+
+          <div class="entry">
+            {{ post.excerpt }}
+          </div>
+
+          <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<!-- Recent Works -->
+<div class="row column">
+  <h3>Recent Work</h3>
+</div>
+
+<div class="row">
+  <div class="columns small-12 medium-6 large-4">
+    <div class="card">
+      <div class="card-image">
+        <img src="http://placehold.it/256x256" width="100%">
+      </div>
+      <div class="card-content">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+        </p>
+      </div>
+      <div class="card-title">
+        test title
+      </div>
+    </div>
+  </div> <!-- /.column -->
+  <div class="columns small-12 medium-6 large-4">
+    <div class="card">
+      <div class="card-image">
+        <img src="http://placehold.it/256x256" width="100%">
+      </div>
+      <div class="card-content">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+        </p>
+      </div>
+      <div class="card-title">
+        test title
+      </div>
+    </div>
+  </div> <!-- /.column -->
+  <div class="columns small-12 medium-6 large-4">
+    <div class="card">
+      <div class="card-image">
+        <img src="http://placehold.it/256x256" width="100%">
+      </div>
+      <div class="card-content">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+        </p>
+      </div>
+      <div class="card-title">
+        test title
+      </div>
+    </div>
+  </div> <!-- /.column -->
+</div> <!-- /.row -->
+
+<div class="row column">
+  <hr>
+  <ul class="vertical medium-horizontal menu expanded text-center">
+    <li>
+      <a href="#">
+        <div class="stat">0</div>
+        <span>Apps</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <div class="stat">0</div>
+        <span>Blog Posts</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <div class="stat">1</div>
+        <span>Websites</span>
+      </a>
+    </li>
+    <!--
+    <li>
+      <a href="#">
+        <div class="stat">0</div>
+        <span>Logos</span>
+      </a>
+    </li>
+    -->
+  </ul>
+  <hr>
+</div> <!-- /.row -->

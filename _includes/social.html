@@ -1,15 +1,121 @@
 <!-- social -->
-<h4>Find me on the web:</h4>
-{% if site.social-media.email %}<a href="mailto:{{ site.social-media.email }}"><i class="svg-icon email"></i></a>{% endif %}
-{% if site.social-media.github %}<a href="https://github.com/{{ site.social-media.github }}"><i class="svg-icon github"></i></a>{% endif %}
-{% if site.social-media.twitter %}<a href="https://www.twitter.com/{{ site.social-media.twitter }}"><i class="svg-icon twitter"></i></a>{% endif %}
-{% if site.social-media.linkedin %}<a href="https://www.linkedin.com/in/{{ site.social-media.linkedin }}"><i class="svg-icon linkedin"></i></a>{% endif %}
-{% if site.social-media.googleplus %}<a href="https://plus.google.com/{{ site.social-media.googleplus }}"><i class="svg-icon googleplus"></i></a>{% endif %}
-{% if site.social-media.stackoverflow %}<a href="http://stackoverflow.com/{{ site.social-media.stackoverflow }}"><i class="svg-icon stackoverflow"></i></a>{% endif %}
-{% if site.social-media.instagram %}<a href="https://instagram.com/{{ site.social-media.instagram }}"><i class="svg-icon instagram"></i></a>{% endif %}
-{% if site.social-media.facebook %}<a href="https://www.facebook.com/{{ site.social-media.facebook }}"><i class="svg-icon facebook"></i></a>{% endif %}
-{% if site.social-media.youtube %}<a href="https://youtube.com/{{ site.social-media.youtube }}"><i class="svg-icon youtube"></i></a>{% endif %}
-{% if site.social-media.pinterest %}<a href="https://www.pinterest.com/{{ site.social-media.pinterest }}"><i class="svg-icon pinterest"></i></a>{% endif %}
-{% if site.social-media.rss %}<a href="{{ site.baseurl }}/feed.xml"><i class="svg-icon rss"></i></a>{% endif %}
-{% if site.social-media.flickr %}<a href="https://www.flickr.com/{{ site.social-media.flickr }}"><i class="svg-icon flickr"></i></a>{% endif %}
-{% if site.social-media.dribbble %}<a href="https://dribbble.com/{{ site.social-media.dribbble }}"><i class="svg-icon dribbble"></i></a>{% endif %}
+
+<h6 class="subheader">Find me on the web:</h6>
+<ul class="menu vertical medium-horizontal">
+  <!-- email -->
+  <!-- {% if site.social-media.email %}
+  <li>
+    <a href="mailto:{{ site.social-media.email }}">
+      <i class="fa fa-lg fa-at"></i>
+    </a>
+  </li>
+  {% endif %} -->
+
+  <!-- github -->
+  {% if site.social-media.github %}
+  <li>
+    <a href="https://github.com/{{ site.social-media.github }}" target="_blank">
+      <i class="fa fa-lg fa-github"></i> <span class="hide-for-medium">Github</span>
+    </a>
+  </li>
+  {% endif %}
+
+  <!-- twitter -->
+  {% if site.social-media.twitter %}
+  <li>
+    <a href="https://www.twitter.com/{{ site.social-media.twitter }}" target="_blank">
+      <i class="fa fa-lg fa-twitter"></i> <span class="hide-for-medium">Twitter</span>
+    </a>
+  </li>
+  {% endif %}
+
+  <!-- linkedin -->
+  {% if site.social-media.linkedin %}
+  <li>
+    <a href="https://www.linkedin.com/in/{{ site.social-media.linkedin }}" target="_blank">
+      <i class="fa fa-lg fa-linkedin"></i> <span class="hide-for-medium">LinkedIn</span>
+    </a>
+  </li>
+  {% endif %}
+
+  <!-- googleplus -->
+  {% if site.social-media.googleplus %}
+  <li>
+    <a href="https://plus.google.com/{{ site.social-media.googleplus }}" target="_blank">
+      <i class="fa fa-lg fa-"></i> <span class="hide-for-medium"></span>
+    </a>
+  </li>
+  {% endif %}
+
+  <!-- stackoverflow -->
+  {% if site.social-media.stackoverflow %}
+  <li>
+    <a href="http://stackoverflow.com/{{ site.social-media.stackoverflow }}" target="_blank">
+      <i class="fa fa-lg fa-"></i> <span class="hide-for-medium"></span>
+    </a>
+  </li>
+  {% endif %}
+
+  <!-- instagram -->
+  {% if site.social-media.instagram %}
+  <li>
+    <a href="https://instagram.com/{{ site.social-media.instagram }}" target="_blank">
+      <i class="fa fa-lg fa-"></i> <span class="hide-for-medium"></span>
+    </a>
+  </li>
+  {% endif %}
+
+  <!-- facebook -->
+  {% if site.social-media.facebook %}
+  <li>
+    <a href="https://www.facebook.com/{{ site.social-media.facebook }}" target="_blank">
+      <i class="fa fa-lg fa-facebook"></i> <span class="hide-for-medium">Facebook</span>
+    </a>
+  </li>
+  {% endif %}
+
+  <!-- youtube -->
+  {% if site.social-media.youtube %}
+  <li>
+    <a href="https://youtube.com/{{ site.social-media.youtube }}" target="_blank">
+      <i class="fa fa-lg fa-youtube"></i> <span class="hide-for-medium"></span>
+    </a>
+  </li>
+  {% endif %}
+
+  <!-- pintrest -->
+  {% if site.social-media.pinterest %}
+  <li>
+    <a href="https://www.pinterest.com/{{ site.social-media.pinterest }}" target="_blank">
+      <i class="fa fa-lg fa-pintrest"></i> <span class="hide-for-medium"></span>
+    </a>
+  </li>
+  {% endif %}
+
+  <!-- rss feed -->
+  {% if site.social-media.rss %}
+  <li>
+    <a href="{{ site.baseurl }}/feed.xml" target="_blank">
+      <i class="fa fa-lg fa-"></i> <span class="hide-for-medium"></span>
+    </a>
+  </li>
+  {% endif %}
+
+  <!-- flickr -->
+  {% if site.social-media.flickr %}
+  <li>
+    <a href="https://www.flickr.com/{{ site.social-media.flickr }}" target="_blank">
+      <i class="fa fa-lg fa-"></i> <span class="hide-for-medium"></span>
+    </a>
+  </li>
+  {% endif %}
+
+  <!-- dribble -->
+  {% if site.social-media.dribbble %}
+  <li>
+    <a href="https://dribbble.com/{{ site.social-media.dribbble }}" target="_blank">
+      <i class="fa fa-lg fa-"></i> <span class="hide-for-medium"></span>
+    </a>
+  </li>
+  {% endif %}
+</ul>
