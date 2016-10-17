@@ -1,6 +1,6 @@
 @import 'variables';
-@import 'header';
-@import 'md-card';
+// @import 'header';
+// @import 'md-card';
 
 html {
 
@@ -58,12 +58,12 @@ body {
 
 header {
   // text-align: center;
-  padding: 1em;
-  background: url(images/bg/wpgmb_human_rights_museum.jpg) no-repeat bottom right fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -ms-background-size: cover;
-  background-size: cover;
+  // padding: 1em;
+  // background: url(images/bg/wpgmb_human_rights_museum.jpg) no-repeat bottom right fixed;
+  // -webkit-background-size: cover;
+  // -moz-background-size: cover;
+  // -ms-background-size: cover;
+  // background-size: cover;
   // border-bottom-right-radius: 0.15rem;
   // border-bottom-left-radius: 0.15rem;
   // box-shadow: 0.25rem 0.25rem 2rem #222;
@@ -72,10 +72,10 @@ header {
   }
 
   h1 {
-    font-size: 2rem;
+    // font-size: 2rem;
   }
   h2 {
-    font-size: 1.5rem;
-    margin-bottom:0;
+    // font-size: 1.5rem;
+    // margin-bottom:0;
   }
 }
