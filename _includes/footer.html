@@ -1,34 +1,21 @@
-      <div class="row expanded">
-        <footer class="footer" style="padding: 2rem 0; background: #e6e6e6;">
-          <div class="row">
-            <div class="columns small-12 medium-12 large-3">
-              <h6 class="subheader">Contact me:</h6>
-              <ul class="menu vertical medium-horizontal">
-                <li><a href="mailto:info@jordanbrauer.ca"><i class="fa fa-lg fa-at"></i> info@jordanbrauer.ca</a></li>
-              </ul>
-            </div>
-            <div class="columns small-12 medium-12 large-3">
-              {% include social.html %}
-            </div> <!-- /.column -->
-            <div class="columns small-12 medium-12 large-6">
-              <h6 class="subheader">Other links:</h6>
-              <ul class="menu vertical medium-horizontal">
-                <li><a href="#">View source on GitHub</a></li>
-                <li><a href="#">{{ site.name }} &copy; 2016</a></li>
-              </ul>
-            </div> <!-- /.column -->
-          </div> <!-- /.row -->
-
-          <div class="row" style="font-size: 12px">
-          </div> <!-- /.row -->
-        </footer>
-      </div> <!-- /.row -->
-
+      <footer>
+        <div class="row column">
+          <hr>
+        </div> <!-- /.row -->
+        <div class="row">
+          <div class="columns small-12 medium-6 large-6">
+            {% include social.html %}
+          </div>
+          <div class="columns small-12 medium-6 large-6">
+            <p class="medium-text-right">Jordan Brauer 2016 &copy;</p>
+          </div>
+        </div> <!-- /.row -->
+      </footer>
     </div> <!-- /#grid -->
-
     <!-- scripts -->
-    <script type="text/javascript" src="/js/vendor/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/vendor/foundation.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" integrity="sha256-0rguYS0qgS6L4qVzANq4kjxPLtvnp5nn2nB5G1lWRv4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.js" integrity="sha256-orE03LSc9KVys7WmCWaOa5LauIvfUpJeaiKbggQBB+8=" crossorigin="anonymous"></script>
     <script type="text/javascript">
       $(document).foundation();
     </script>

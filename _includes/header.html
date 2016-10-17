@@ -21,56 +21,58 @@
     <meta property="og:description" content="{{ site.description }}">
     {% endif %}
 
+    <!-- sitemap -->
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml">
+
     <!--[if lt IE 9]>
     <script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/vendor.css">
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/jbrauer.css">
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml">
+    <!-- normalize.min.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" integrity="sha256-t2/7smZfgrST4FS1DT0bs/KotCM74XlcqZN5Vu7xlrw=" crossorigin="anonymous">
+    <!-- foundation.min.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation-flex.min.css" integrity="sha256-ysU01HJ2jZTp1Ub4madABiODkiMk7oU8DL9/V0YfbXQ=" crossorigin="anonymous">
+    <!-- app.css -->
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/app.css">
+    <!-- font-awesome.js -->
+    <script src="https://use.fontawesome.com/c477074d77.js"></script>
   </head>
   <body>
-    <div id="grid">
-      <!-- navbar -->
-      <div class="row expanded">
-        <nav data-sticky-container>
-          <div class="top-bar" data-sticky data-margin-top="0" data-margin-bottom="32" style="width:100%;" data-top-anchor="1" data-btm-anchor="grid:bottom">
-            <div class="top-bar-left">
-              <ul class="horizontal menu">
-                <li {% if page.title == 'About' %}class="active"{% endif %}><a href="{{ site.baseurl }}/About">About</a></li>
-                <li {% if page.title == 'Blog' %}class="active"{% endif %}><a href="{{ site.baseurl }}/">Blog</a></li>
-                <li {% if page.title == 'Portfolio' %}class="active"{% endif %}><a href="{{ site.baseurl }}/">Portfolio</a></li>
-                <li {% if page.title == 'Contact' %}class="active"{% endif %}><a href="{{ site.baseurl }}/">Contact</a></li>
+    <div class="grid">
+      <header>
+        <div class="row">
+          <div class="columns small-12 medium-6 large-6">
+            <div class="media-object">
+              <div class="media-object-section">
+                <a href="{{ site.baseurl }}/">
+                  <img src="{{ site.avatar }}" alt="{{ site.description }}" width="96px">
+                </a>
+              </div>
+              <div class="media-object-section">
+                <h1 style="font-size:1.33rem;">
+                  {{ site.name }}
+                  <br>
+                  <small class="subheader">{{ site.description }}</small>
+                </h1>
+              </div>
+            </div>
+          </div>
+          <div class="columns small-12 medium-6 large-6">
+            <nav>
+              <ul class="horizontal menu align-right">
+                <!-- <li><a href="{{ site.baseurl }}/">About</a></li> -->
+                <!-- <li><a href="{{ site.baseurl }}/">Blog</a></li> -->
+                <!-- <li><a href="{{ site.baseurl }}/">Portfolio</a></li> -->
+                <!-- <li><a href="{{ site.baseurl }}/">Contact</a></li> -->
+                <!-- <li><a href="{{ site.baseurl }}/">Menu Item</a></li> -->
+                <!-- <li><a href="{{ site.baseurl }}/">Menu Item</a></li> -->
+                <!-- <li><a href="{{ site.baseurl }}/">Menu Item</a></li> -->
+                <!-- <li><a href="{{ site.baseurl }}/">Menu Item</a></li> -->
               </ul>
-            </div>
+            </nav>
           </div>
-        </nav>
-      </div> <!-- /.row.col -->
-
-      <!-- jumbotron -->
-      <div class="row expanded">
-        <header id="header">
-          <div class="row collapse">
-            <div class="columns small-12 medium-6 large-6">
-              <a class="avatar thumbnail" href="{{ site.baseurl }}/">
-                <!-- <img class="thumbnail" src="{{ site.avatar }}" alt="" width="128px"> -->
-                <img src="/images/logo/jbrauer-alt-logo.png" alt="" width="128px">
-              </a>
-            </div>
-            <div class="columns small-12 medium-6 large-6">
-              <h1>{{ site.name }}</h1>
-              <h2 class="subheader">{{ site.description }}</h2>
-            </div>
-          </div>
-          <!-- <div class="row">
-            <div class="columns small-12 medium-12 large-2">
-            </div>
-            <div class="columns small-12 medium-12 large-10">
-            </div>
-          </div> -->
-        </header>
-        <hr>
-      </div> <!-- /.row.col -->
-
-
-      <!-- <div class="row column paper"> -->
+        </div><!-- /.row -->
+        <div class="row column">
+          <hr>
+        </div> <!-- /.row -->
+      </header>
