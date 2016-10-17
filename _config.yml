@@ -4,10 +4,11 @@
 name: Jordan Brauer
 
 # Short bio or description (displayed in the header)
-description: Front-end developer and table-top gaming enthusiast.
+description: Front-end developer. # and table-top gaming enthusiast.
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://avatars1.githubusercontent.com/u/18744334?v=3&s=466
+# avatar: https://avatars1.githubusercontent.com/u/18744334?v=3&s=466
+avatar: ./images/logo/jbrauer-alt-logo.png
 
 #social media links in footer
 social-media:
