@@ -2,80 +2,30 @@
 // @import 'header';
 // @import 'md-card';
 
-html {
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
 
-}
+html,
 body {
-  // color: #fff;
-  // background: url(images/bg/wpgmb_human_rights_museum.jpg) no-repeat center center fixed;
-  // -webkit-background-size: cover;
-  // -moz-background-size: cover;
-  // -ms-background-size: cover;
-  // background-size: cover;
-}
-#grid {
-  // background: rgba(0,0,0,0.75);
+  font-family: 'Lato', sans-serif !important;
+  color: #888;
 }
 
-.avatar {
-  display: inline-block;
-  height: 128px;
-  width:128px;
-  max-width: 128px;
-  max-height: 128px;
-  // background: rgba(255,255,255, 0.75);
-  background: #fff;
-  position: relative;
-  //
-  img {
-    width: 100%;
-    height: auto;
-    position: absolute;
-    padding: 0.5rem;
-    margin: auto;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lato', sans-serif !important;
 }
-
-.post.card {
-  padding: 1rem;
-  margin: 0 auto 2rem auto;
+h1 {
+  font-size: 1.75rem;
 }
-
-.paper {
-  background: #fff;
-  // max-width: 1170px;
-  // -webkit-border-radius: 0.25rem;
-  // border-radius: 0.15rem;
-  // padding: 1rem;
-  // margin-top: 1rem;
-  // margin-bottom: 1rem;
-  // box-shadow: 0.25rem 0.25rem 2rem #222;
+h2 {
+  font-size: 1.5rem;
 }
 
 header {
-  // text-align: center;
-  // padding: 1em;
-  // background: url(images/bg/wpgmb_human_rights_museum.jpg) no-repeat bottom right fixed;
-  // -webkit-background-size: cover;
-  // -moz-background-size: cover;
-  // -ms-background-size: cover;
-  // background-size: cover;
-  // border-bottom-right-radius: 0.15rem;
-  // border-bottom-left-radius: 0.15rem;
-  // box-shadow: 0.25rem 0.25rem 2rem #222;
-
-  a {
-  }
-
   h1 {
-    // font-size: 2rem;
+    font-size: 1.5rem;
   }
   h2 {
-    // font-size: 1.5rem;
-    // margin-bottom:0;
+    font-size: 1.25rem;
+    margin-bottom:0;
   }
 }

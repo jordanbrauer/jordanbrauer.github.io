@@ -3,35 +3,30 @@ title: Home
 layout: page
 ---
 
-<h2 class="text-center">Featured Work</h2>
-
-<div class="row small-up-1 medium-up-2 large-up-3">
-  {% for i in (1..3) %}
-  <div class="column">
-    <img class="thumbnail" src="http://placehold.it/300x360?text=Project" alt="asdf">
+<main>
+  <div class="row column text-center">
+    <h2>Featured Work</h2>
   </div>
-  {% endfor %}
-</div>
 
-<h2 class="text-center">Featured Posts</h2>
-
-<div class="row small-up-1 medium-up-2 large-up-3">
-  {% for i in (1..5) %}
-  <div class="column">
-    <img class="thumbnail" src="http://placehold.it/300x360?text=Post">
+  <div class="row small-up-1 medium-up-2 large-up-3 text-center">
+    {% for i in (1..3) %}
+    <div class="column">
+      <div class="card">
+        <div class="card-image">
+          <a class="button expanded card-cta">View</a>
+          <img src="http://placehold.it/250x250?text=Project">
+        </div>
+        <div class="card-info">
+          <h5 class="card-info-header">Card Header</h5>
+          <p class="card-info-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+          <div class="expanded button-group">
+            <a class="button"><i class="fa fa-md fa-file-text-o"></i> Info</a>
+            <a class="button"><i class="fa fa-md fa-align-middle fa-external-link"></i> View</a>
+            <a class="button"><i class="fa fa-md fa-code"></i> Source</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
   </div>
-  {% endfor %}
-</div>
-<!-- 
-<hr>
-<div class="row">
-  {% for i in (1..3) %}
-  <div class="columns small-12 medium-4 large-4 text-center">
-    <a href="#">
-      <div class="stat">0</div>
-      <p>Product</p>
-    </a>
-  </div>
-  {% endfor %}
-</div>
-<hr> -->
+</main>

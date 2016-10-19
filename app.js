@@ -1,1 +1,2 @@
-$(document).foundation()
+// initialize foundation js
+$(document).foundation();

@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation-flex.min.css" integrity="sha256-ysU01HJ2jZTp1Ub4madABiODkiMk7oU8DL9/V0YfbXQ=" crossorigin="anonymous">
     <!-- app.css -->
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/app.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
     <!-- font-awesome.js -->
     <script src="https://use.fontawesome.com/c477074d77.js"></script>
   </head>
@@ -45,11 +46,11 @@
             <div class="media-object">
               <div class="media-object-section">
                 <a href="{{ site.baseurl }}/">
-                  <img src="{{ site.avatar }}" alt="{{ site.description }}" width="96px">
+                  <img class="thumbnail" src="{{ site.avatar }}" alt="{{ site.description }}" width="96px">
                 </a>
               </div>
               <div class="media-object-section">
-                <h1 style="font-size:1.33rem;">
+                <h1>
                   {{ site.name }}
                   <br>
                   <small class="subheader">{{ site.description }}</small>
@@ -57,22 +58,17 @@
               </div>
             </div>
           </div>
+          <!--
           <div class="columns small-12 medium-6 large-6">
             <nav>
               <ul class="horizontal menu align-right">
-                <!-- <li><a href="{{ site.baseurl }}/">About</a></li> -->
-                <!-- <li><a href="{{ site.baseurl }}/">Blog</a></li> -->
-                <!-- <li><a href="{{ site.baseurl }}/">Portfolio</a></li> -->
-                <!-- <li><a href="{{ site.baseurl }}/">Contact</a></li> -->
-                <!-- <li><a href="{{ site.baseurl }}/">Menu Item</a></li> -->
-                <!-- <li><a href="{{ site.baseurl }}/">Menu Item</a></li> -->
-                <!-- <li><a href="{{ site.baseurl }}/">Menu Item</a></li> -->
-                <!-- <li><a href="{{ site.baseurl }}/">Menu Item</a></li> -->
+                <li><a href="{{ site.baseurl }}/">About</a></li>
+                <li><a href="{{ site.baseurl }}/">Blog</a></li>
+                <li><a href="{{ site.baseurl }}/">Portfolio</a></li>
+                <li><a href="{{ site.baseurl }}/">Contact</a></li>
               </ul>
             </nav>
           </div>
+          -->
         </div><!-- /.row -->
-        <div class="row column">
-          <hr>
-        </div> <!-- /.row -->
       </header>

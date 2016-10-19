@@ -1,5 +1,5 @@
 ### Custom ###
-#jekyll files
+# jekyll files
 _site
 .jekyll
 .jekyll-metadata
@@ -7,21 +7,6 @@ _site
 Gemfile
 Gemfile.lock
 .old
-
-
-# logos
-images/logo
-!images/logo/jbrauer-alt-logo.png
-
-#filler content
-2014-3-3-Hello-World.md
-config.png
-first-post.png
-jekyll-logo.png
-jekyll-now-theme-screenshot.jpg
-step1.gif
-
-
 
 ### macOS ###
 *.DS_Store
