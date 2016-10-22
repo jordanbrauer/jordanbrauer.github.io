@@ -16,14 +16,25 @@ layout: page
           <img src="http://placehold.it/250x250?text=Project">
         </div>
         <div class="card-info">
-          <h5 class="card-info-header">fillytext.js</h5>
+          <h5 class="card-info-header">{{ site.github.filly-text }}</h5>
           <p class="card-info-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
           <div class="expanded button-group">
-            <a class="button" href="#"><i class="fa fa-md fa-file-text-o"></i> Info</a>
+            <a class="button" data-open="filly-text-js-modal"><i class="fa fa-md fa-file-text-o"></i> Info</a>
             <a class="button disabled" href="#" target="_blank"><i class="fa fa-md fa-align-middle fa-external-link"></i> View</a>
             <a class="button" href="https://github.com/jordanbrauer/filly-text" target="_blank"><i class="fa fa-md fa-code"></i> Code</a>
           </div>
         </div>
+      </div>
+
+      <div id="filly-text-js-modal" class="reveal" data-reveal>
+        <h5>{{ site.github.filly-text }}</h5>
+        <ul class="no-bullet">
+          <li>JS</li>
+        </ul>
+        <p><strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        <button class="close-button" type="button" aria-label="Close modal" data-close>
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
     </div>
     <div class="column">
