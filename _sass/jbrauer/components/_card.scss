@@ -12,6 +12,9 @@
   &:hover {
     margin: 0.75rem;
     box-shadow: 0rem 0.33rem 0.5rem #888;
+    .card-image img {
+      -webkit-filter: grayscale(0);
+    }
   }
 
   // medium an up screens
@@ -71,4 +74,5 @@
     -webkit-filter: grayscale(1);
     width: 100%;
   }
+
 }
