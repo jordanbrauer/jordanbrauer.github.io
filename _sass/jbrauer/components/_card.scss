@@ -36,9 +36,14 @@
 }
 
 .card-image {
+  min-height: 337.2px;
   margin-bottom: 20px;
   position: relative;
   overflow: hidden;
+
+  &.padded {
+    padding: 1.5rem;
+  }
 
   // &:hover {
   //   img {
