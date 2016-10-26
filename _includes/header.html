@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" integrity="sha256-t2/7smZfgrST4FS1DT0bs/KotCM74XlcqZN5Vu7xlrw=" crossorigin="anonymous">
     <!-- foundation.min.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation-flex.min.css" integrity="sha256-ysU01HJ2jZTp1Ub4madABiODkiMk7oU8DL9/V0YfbXQ=" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/foundation.min.css"> -->
     <!-- app.css -->
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/app.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
@@ -40,15 +41,15 @@
   </head>
   <body>
     <div class="grid">
-      <header>
+      <header class="fadein zero">
         <div class="row">
           <div class="columns small-12 medium-6 large-6 text-center medium-text-left">
-            <a class="logo text-center medium-text-left" href="{{ site.baseurl }}/">
+            <a class="logo text-center medium-text-left " href="{{ site.baseurl }}/">
               <img src="{{ site.avatar }}" alt="{{ site.description }}">
             </a>
           </div>
           <div class="columns small-12 medium-6 large-6">
-            <h1 class="text-center medium-text-right">
+            <h1 class="text-center medium-text-right ">
               {{ site.name }}
               <br>
               <small class="subheader">{{ site.description }}</small>
