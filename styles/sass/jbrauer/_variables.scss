@@ -1,0 +1,58 @@
+// fonts
+$global_font_style:         normal !default;
+$global_font_variant:       normal !default;
+$global_font_weight:        normal !default;
+$global_font_size:          1rem !default;
+$global_font_line_height:   normal !default;
+$global_font_family:        'Lato', sans-serif !default;
+$global_font_color:         #888 !default;
+$global_font:               $global_font_style $global_font_variant $global_font_weight $global_font_size#{'/'}$global_font_line_height $global_font_family !default;
+
+// headings
+$h1_font_size:            1.75rem !default;
+$h2_font_size:            1.5rem !default;
+
+// header
+$header_margin_top:       0 !default;
+$header_margin_right:     0 !default;
+$header_margin_bottom:    4rem !default;
+$header_margin_left:      0 !default;
+$header_margin:           $header_margin_top $header_margin_right $header_margin_bottom $header_margin_left !default;
+
+$header_padding_top:      1rem !default;
+$header_padding_right:    0 !default;
+$header_padding_bottom:   1rem !default;
+$header_padding_left:     0 !default;
+$header_padding:          $header_padding_top $header_padding_right $header_padding_bottom $header_padding_left !default;
+
+$header_h1_font_size:     1.55rem !default;
+
+$header_h2_font_size:       1.25rem !default;
+$header_h2_margin_top:      0 !default;
+$header_h2_margin_right:    0 !default;
+$header_h2_margin_bottom:   0 !default;
+$header_h2_margin_left:     0 !default;
+$header_h2_margin:          $header_h2_margin_top $header_h2_margin_right $header_h2_margin_bottom $header_h2_margin_left !default;
+
+// footer
+$footer_margin_top:         $header_margin_bottom !default;
+$footer_margin_right:       $header_margin_right !default;
+$footer_margin_bottom:      $header_margin_top !default;
+$footer_margin_left:        $header_margin_left !default;
+$footer_margin:             $footer_margin_top $footer_margin_right $footer_margin_bottom $footer_margin_left !default;
+
+$footer_padding:            $header_padding !default;
+$footer_background:         #efefef !default;
+
+// md card
+$card_transition:   all 0.2s ease !default;
+$card_margin:       1rem !default;
+$card_padding:      0.15rem !default;
+$card_border:       2px solid #efefef !default;
+$card_box_shadow:   0rem 0.15rem 0.15rem #aaa !default;
+
+$card_medium_margin: 0.75rem !default;
+
+$card_hover_margin:             0.75rem !default;
+$card_hover_box_shadow:         0rem 0.33rem 0.33rem #888 !default;
+$card_hover_card_image_filter:  grayscale(0) !default;

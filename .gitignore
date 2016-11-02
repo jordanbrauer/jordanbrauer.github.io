@@ -1,11 +1,4 @@
-### Custom ###
-# jekyll files
-_site
-.jekyll
-.jekyll-metadata
-.bundle
-Gemfile
-Gemfile.lock
+### Project Files ###
 .old
 
 ### macOS ###

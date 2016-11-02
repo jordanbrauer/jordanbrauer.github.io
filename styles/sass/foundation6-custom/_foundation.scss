@@ -393,11 +393,11 @@ img {
 textarea {
   height: auto;
   min-height: 50px;
-  border-radius: 3px; }
+  border-radius: 0px; }
 
 select {
   width: 100%;
-  border-radius: 3px; }
+  border-radius: 0px; }
 
 #map_canvas img,
 #map_canvas embed,
@@ -416,7 +416,7 @@ button {
   background: transparent;
   padding: 0;
   border: 0;
-  border-radius: 3px;
+  border-radius: 0px;
   line-height: 1; }
   [data-whatinput='mouse'] button {
     outline: 0; }
@@ -605,7 +605,7 @@ kbd {
   background-color: #e6e6e6;
   color: #0a0a0a;
   font-family: Consolas, "Liberation Mono", Courier, monospace;
-  border-radius: 3px; }
+  border-radius: 0px; }
 
 .subheader {
   margin-top: 0.2rem;
@@ -836,7 +836,7 @@ kbd {
   transition: background-color 0.25s ease-out, color 0.25s ease-out;
   vertical-align: middle;
   border: 1px solid transparent;
-  border-radius: 3px;
+  border-radius: 0px;
   padding: 0.85em 1em;
   margin: 0 0 1rem 0;
   font-size: 0.9rem;

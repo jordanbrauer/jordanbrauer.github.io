@@ -1,111 +1,185 @@
----
-title: Home
-layout: page
----
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+    <meta name="author" content="Jordan Brauer">
+    <meta name="description" content="Greetings! My name is Jordan Brauer, and I am a front-end web developer residing in Canada.">
+    <title>Jordan Brauer – Front-end Developer</title>
+    <!-- app.css -->
+    <link rel="stylesheet" type="text/css" href="styles/app.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
+    <!-- font-awesome.js -->
+    <script src="https://use.fontawesome.com/c477074d77.js"></script>
+  </head>
+  <body>
+    <div class="grid">
+      <header class="fadein frame-zero">
+        <div class="row">
+          <div class="columns small-12 medium-6 large-6 text-center medium-text-left">
+            <a class="logo text-center medium-text-left" href="#">
+              <img src="images/logo_jordanbrauer_avatar_rgb_crop.png" alt="Jordan Brauer">
+            </a>
+          </div>
+          <div class="columns small-12 medium-6 large-6">
+            <h1 class="text-center medium-text-right ">
+              Jordan Brauer
+              <br>
+              <small class="subheader">Front end developer.</small>
+            </h1>
+          </div>
+        </div><!-- /.row -->
+      </header>
 
-<main class="main">
+      <main class="main">
+        <div class="row column text-center">
+          <h2 class="fadein frame-two">Personal Projects</h2>
+        </div> <!-- /.row -->
 
-  <div class="row column text-center">
-    <h2 class="fadein two">Personal Projects</h2>
-  </div>
+        <div class="row small-up-1 medium-up-2 large-up-3 text-center">
+          <div class="column">
+            <div class="card fadein frame-one">
+              <div class="card-image">
+                <img src="images/logo_js.png" alt="JavaScript">
+              </div>
+              <div class="card-info">
+                <h5 class="card-info-header">fillytext.js</h5>
+                <p class="card-info-text">A small JavaScript plugin that aims to reduce the bloaty-ness from filler text.</p>
+                <div class="expanded button-group">
+                  <a class="button" href="https://github.com/jordanbrauer/filly-text/blob/master/README.md"target="_blank"><i class="fa fa-md fa-align-middle fa-external-link"></i> View</a>
+                  <a class="button" href="https://github.com/jordanbrauer/filly-text" target="_blank"><i class="fa fa-md fa-code"></i> Code</a>
+                </div>
+              </div>
+            </div>
+          </div> <!-- /.col -->
 
-  <div class="row small-up-1 medium-up-2 large-up-3 text-center">
-    <div class="column">
-      <div class="card fadein one">
-        <div class="card-image">
-          <img src="images/logo_js.png">
-        </div>
-        <div class="card-info">
-          <h5 class="card-info-header">fillytext.js</h5>
-          <p class="card-info-text">A small JavaScript plugin that aims to reduce the bloaty-ness from filler text.</p>
-          <div class="expanded button-group">
-            <a class="button" href="https://github.com/jordanbrauer/filly-text/blob/master/README.md"target="_blank"><i class="fa fa-md fa-align-middle fa-external-link"></i> View</a>
-            <a class="button" href="https://github.com/jordanbrauer/filly-text" target="_blank"><i class="fa fa-md fa-code"></i> Code</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="column">
-      <div class="card fadein two">
-        <div class="card-image padded">
-          <img src="images/logo_html5.png">
-        </div>
-        <div class="card-info">
-          <h5 class="card-info-header">What's Been Spoiled?</h5>
-          <p class="card-info-text">A simple, lightweight, right to the point Magic: the Gathering spoiler website.</p>
-          <div class="expanded button-group">
-            <a class="button disabled"><i class="fa fa-md fa-align-middle fa-external-link"></i> View</a>
-            <a class="button" href="https://github.com/jordanbrauer/whats-been-spoiled" target="_blank"><i class="fa fa-md fa-code"></i> Code</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="column">
-      <div class="card fadein three">
-        <div class="card-image padded">
-          <img src="images/logo_css3.png">
-        </div>
-        <div class="card-info">
-          <h5 class="card-info-header">Animal Trading Cards</h5>
-          <p class="card-info-text">A project for the Front-End Developer Nanodegree at Udacity.</p>
-          <div class="expanded button-group">
-            <a class="button disabled"><i class="fa fa-md fa-align-middle fa-external-link"></i> View</a>
-            <a class="button" href="https://github.com/jordanbrauer/udacity-fend-animal-trading-cards" target="_blank"><i class="fa fa-md fa-code"></i> Code</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+          <div class="column">
+            <div class="card fadein frame-two">
+              <div class="card-image padded">
+                <img src="images/logo_html5.png" alt="HTML5">
+              </div>
+              <div class="card-info">
+                <h5 class="card-info-header">What's Been Spoiled?</h5>
+                <p class="card-info-text">A simple, lightweight, right to the point Magic: the Gathering spoiler website.</p>
+                <div class="expanded button-group">
+                  <a class="button disabled"><i class="fa fa-md fa-align-middle fa-external-link"></i> View</a>
+                  <a class="button" href="https://github.com/jordanbrauer/whats-been-spoiled" target="_blank"><i class="fa fa-md fa-code"></i> Code</a>
+                </div>
+              </div>
+            </div>
+          </div> <!-- /.col -->
 
-  <div class="row column text-center">
-    <h2 class="fadein two buffer-top-4">Contributing Projects</h2>
-  </div>
+          <div class="column">
+            <div class="card fadein frame-three">
+              <div class="card-image padded">
+                <img src="images/logo_css3.png" alt="CSS3">
+              </div>
+              <div class="card-info">
+                <h5 class="card-info-header">Animal Trading Cards</h5>
+                <p class="card-info-text">A project for the Front-End Developer Nanodegree at Udacity.</p>
+                <div class="expanded button-group">
+                  <a class="button disabled"><i class="fa fa-md fa-align-middle fa-external-link"></i> View</a>
+                  <a class="button" href="https://github.com/jordanbrauer/udacity-fend-animal-trading-cards" target="_blank"><i class="fa fa-md fa-code"></i> Code</a>
+                </div>
+              </div>
+            </div>
+          </div> <!-- /.col -->
+        </div> <!-- /.row -->
 
-  <div class="row small-up-1 medium-up-2 large-up-3 text-center">
-    <div class="column">
-      <div class="card fadein one">
-        <div class="card-image">
-          <img src="images/logo_js.png">
-        </div>
-        <div class="card-info">
-          <h5 class="card-info-header">Timato</h5>
-          <p class="card-info-text">A pomodoro timer app that can be controlled on multiple devices, live!</p>
-          <div class="expanded button-group">
-            <a class="button" href="https://github.com/ProjectTimato" target="_blank"><i class="fa fa-md fa-align-middle fa-external-link"></i> View</a>
-            <a class="button disabled"><i class="fa fa-md fa-code"></i> Code</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="column">
-      <div class="card fadein two">
-        <div class="card-image padded">
-          <img src="images/logo_sass.png">
-        </div>
-        <div class="card-info">
-          <h5 class="card-info-header">Arcadian Band Website</h5>
-          <p class="card-info-text">LESS to SASS Conversion for the Arcadian band website styles.</p>
-          <div class="expanded button-group">
-            <a class="button" href="https://arcadian.band/" target="_blank"><i class="fa fa-md fa-align-middle fa-external-link"></i> View</a>
-            <a class="button" href="https://github.com/jordanbrauer/arcadian" target="_blank"><i class="fa fa-md fa-code"></i> Code</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="column">
-      <div class="card fadein three">
-        <div class="card-image padded">
-          <img src="images/logo_sass.png">
-        </div>
-        <div class="card-info">
-          <h5 class="card-info-header">Keyrune Font</h5>
-          <p class="card-info-text">SASS addition to the (unofficial) Magic: the Gathering web icon font.</p>
-          <div class="expanded button-group">
-            <a class="button" href="http://andrewgioia.github.io/Keyrune/cheatsheet.html" target="_blank"><i class="fa fa-md fa-align-middle fa-external-link"></i> View</a>
-            <a class="button" href="https://github.com/jordanbrauer/Keyrune/tree/keyrune-scss" target="_blank"><i class="fa fa-md fa-code"></i> Code</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</main>
+        <div class="row column text-center">
+          <h2 class="fadein frame-two buffer-top-4">Contributing Projects</h2>
+        </div> <!-- /.row -->
+
+        <div class="row small-up-1 medium-up-2 large-up-3 text-center">
+          <div class="column">
+            <div class="card fadein frame-one">
+              <div class="card-image">
+                <img src="images/logo_js.png" alt="JavaScript">
+              </div>
+              <div class="card-info">
+                <h5 class="card-info-header">Timato</h5>
+                <p class="card-info-text">A pomodoro timer app that can be controlled on multiple devices, live!</p>
+                <div class="expanded button-group">
+                  <a class="button" href="https://github.com/ProjectTimato" target="_blank"><i class="fa fa-md fa-align-middle fa-external-link"></i> View</a>
+                  <a class="button disabled"><i class="fa fa-md fa-code"></i> Code</a>
+                </div>
+              </div>
+            </div>
+          </div> <!-- /.col -->
+
+          <div class="column">
+            <div class="card fadein frame-two">
+              <div class="card-image padded">
+                <img src="images/logo_sass.png" alt="SASS/SCSS">
+              </div>
+              <div class="card-info">
+                <h5 class="card-info-header">Arcadian Band Website</h5>
+                <p class="card-info-text">LESS to SASS Conversion for the Arcadian band website styles.</p>
+                <div class="expanded button-group">
+                  <a class="button" href="https://arcadian.band/" target="_blank"><i class="fa fa-md fa-align-middle fa-external-link"></i> View</a>
+                  <a class="button" href="https://github.com/jordanbrauer/arcadian" target="_blank"><i class="fa fa-md fa-code"></i> Code</a>
+                </div>
+              </div>
+            </div>
+          </div> <!-- /.col -->
+
+          <div class="column">
+            <div class="card fadein frame-three">
+              <div class="card-image padded">
+                <img src="images/logo_sass.png" alt="SASS/SCSS">
+              </div>
+              <div class="card-info">
+                <h5 class="card-info-header">Keyrune Font</h5>
+                <p class="card-info-text">SASS addition to the (unofficial) Magic: the Gathering web icon font.</p>
+                <div class="expanded button-group">
+                  <a class="button" href="http://andrewgioia.github.io/Keyrune/cheatsheet.html" target="_blank"><i class="fa fa-md fa-align-middle fa-external-link"></i> View</a>
+                  <a class="button" href="https://github.com/jordanbrauer/Keyrune/tree/keyrune-scss" target="_blank"><i class="fa fa-md fa-code"></i> Code</a>
+                </div>
+              </div>
+            </div>
+          </div> <!-- /.col -->
+        </div> <!-- /.row -->
+      </main>
+
+      <footer class="fadein frame-zero">
+        <div class="row">
+          <div class="columns small-12 medium-6 large-6">
+            <ul class="vertical menu medium-horizontal">
+              <li> <!-- github -->
+                <a href="https://github.com/jordanbrauer" target="_blank">
+                  <i class="fa fa-lg fa-github"></i> <span class="hide-for-medium">Github</span>
+                </a>
+              </li>
+              <li> <!-- twitter -->
+                <a href="https://www.twitter.com/jordbrauer" target="_blank">
+                  <i class="fa fa-lg fa-twitter"></i> <span class="hide-for-medium">Twitter</span>
+                </a>
+              </li>
+              <li> <!-- linkedin -->
+                <a href="https://www.linkedin.com/in/jordanbrauer" target="_blank">
+                  <i class="fa fa-lg fa-linkedin"></i> <span class="hide-for-medium">LinkedIn</span>
+                </a>
+              </li>
+              <li> <!-- facebook -->
+                <a href="https://www.facebook.com/jordbrauer" target="_blank">
+                  <i class="fa fa-lg fa-facebook"></i> <span class="hide-for-medium">Facebook</span>
+                </a>
+              </li>
+            </ul>
+          </div> <!-- /.col -->
+
+          <div class="columns small-12 medium-6 large-6">
+            <p class="medium-text-right">Copyright &copy; 2016 Jordan Brauer</p>
+          </div> <!-- /.col -->
+        </div> <!-- /.row -->
+      </footer>
+    </div> <!-- /#grid -->
+
+    <!-- scripts -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" integrity="sha256-0rguYS0qgS6L4qVzANq4kjxPLtvnp5nn2nB5G1lWRv4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.js" integrity="sha256-orE03LSc9KVys7WmCWaOa5LauIvfUpJeaiKbggQBB+8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="scripts/app.js"></script>
+  </body>
+</html>

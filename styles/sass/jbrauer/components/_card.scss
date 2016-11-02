@@ -1,0 +1,54 @@
+// _card.scss
+// Jordan Brauer <jbrauer.inc@gmail.com>
+
+.card {
+  -webkit-transition: $card_transition;
+  transition: $card_transition;
+  margin: $card_margin;
+  padding: $card_padding;
+  border: $card_border;
+  box-shadow: $card_box_shadow;
+
+  // medium an up screens
+  @media screen and (min-width: 40em) {
+    margin: $card_medium_margin;
+  }
+
+  &:hover {
+    margin: $card_hover_margin;
+    box-shadow: $card_hover_box_shadow;
+    .card-image img {
+      -webkit-filter: $card_hover_card_image_filter;
+    }
+  }
+}
+
+.card-info {
+  .button-group.expanded {
+    margin-bottom: 0px !important;
+  }
+
+  .card-info-text {
+    text-align: left;
+    padding: 0 1rem;
+  }
+}
+
+.card-image {
+  min-height: 337.2px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+
+  &.padded {
+    padding: 1.5rem;
+  }
+
+  img {
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    -webkit-filter: grayscale(1);
+    width: 100%;
+  }
+
+}
