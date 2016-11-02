@@ -5,16 +5,8 @@ body {
   background: $global_background;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: $global_font_family !important;
-}
-
-h1 {
-  font-size: $h1_font_size;
-}
-
-h2 {
-  font-size: $h2_font_size;
+.grid {
+  // ... no styles needed.
 }
 
 .header {
@@ -39,4 +31,16 @@ h2 {
   margin: $footer_margin;
   padding: $footer_padding;
   background: $footer_background;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $global_font_family !important;
+}
+
+h1 {
+  font-size: $h1_font_size;
+}
+
+h2 {
+  font-size: $h2_font_size;
 }
