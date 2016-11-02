@@ -2886,7 +2886,7 @@ html,
 body {
   font: normal normal normal 1rem"/"normal Lato, sans-serif !important;
   color: #888;
-  background: url(../images/bg_mdn_blueprint.png) top center #fafbfc;
+  background: url(../images/bg/mdn_blueprint.png) top center #fafbfc;
 }
 
 h1, h2, h3, h4, h5, h6 {
