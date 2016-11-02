@@ -1,11 +1,11 @@
-.fa-align-middle { vertical-align: middle; }
+.fa-align-middle { vertical-align: $fa_align_middle_vertical_align; }
 
-.buffer-top-4 { margin-top: 4rem; }
-.buffer-btm-1 { margin-bottom: 1rem; }
+.buffer-top-4 { margin-top: $buffer_top_4_margin_top; }
+.buffer-btm-1 { margin-bottom: $buffer_btm_1_margin_bottom; }
 
 // medium an up screens
 @media screen and (min-width: 40em) {
-  .medium-text-right { text-align: right; }
-  .medium-text-left { text-align: left; }
+  .medium-text-right { text-align: $medium_text_right_text_align; }
+  .medium-text-left { text-align: $medium_text_left_text_align; }
 
 }

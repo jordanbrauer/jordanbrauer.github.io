@@ -1,4 +1,8 @@
-// fonts
+// global =======================================
+//
+$global_background:         url(../images/bg_mdn_blueprint.png) top center #fafbfc !default;
+
+$global_font_path:          'https://fonts.googleapis.com/css?family=Lato:300,400,700' !default;
 $global_font_style:         normal !default;
 $global_font_variant:       normal !default;
 $global_font_weight:        normal !default;
@@ -6,26 +10,28 @@ $global_font_size:          1rem !default;
 $global_font_line_height:   normal !default;
 $global_font_family:        'Lato', sans-serif !default;
 $global_font_color:         #888 !default;
-$global_font:               $global_font_style $global_font_variant $global_font_weight $global_font_size#{'/'}$global_font_line_height $global_font_family !default;
+$global_font:               unquote('#{$global_font_style} #{$global_font_variant} #{$global_font_weight} #{$global_font_size}"/"#{$global_font_line_height} #{$global_font_family}') !default;
 
-// headings
-$h1_font_size:            1.75rem !default;
-$h2_font_size:            1.5rem !default;
+// headings =====================================
+//
+$h1_font_size:              1.75rem !default;
+$h2_font_size:              1.5rem !default;
 
-// header
-$header_margin_top:       0 !default;
-$header_margin_right:     0 !default;
-$header_margin_bottom:    4rem !default;
-$header_margin_left:      0 !default;
-$header_margin:           $header_margin_top $header_margin_right $header_margin_bottom $header_margin_left !default;
+// header =======================================
+//
+$header_margin_top:         0 !default;
+$header_margin_right:       0 !default;
+$header_margin_bottom:      4rem !default;
+$header_margin_left:        0 !default;
+$header_margin:             $header_margin_top $header_margin_right $header_margin_bottom $header_margin_left !default;
 
-$header_padding_top:      1rem !default;
-$header_padding_right:    0 !default;
-$header_padding_bottom:   1rem !default;
-$header_padding_left:     0 !default;
-$header_padding:          $header_padding_top $header_padding_right $header_padding_bottom $header_padding_left !default;
+$header_padding_top:        1rem !default;
+$header_padding_right:      0 !default;
+$header_padding_bottom:     1rem !default;
+$header_padding_left:       0 !default;
+$header_padding:            $header_padding_top $header_padding_right $header_padding_bottom $header_padding_left !default;
 
-$header_h1_font_size:     1.55rem !default;
+$header_h1_font_size:       1.55rem !default;
 
 $header_h2_font_size:       1.25rem !default;
 $header_h2_margin_top:      0 !default;
@@ -34,7 +40,8 @@ $header_h2_margin_bottom:   0 !default;
 $header_h2_margin_left:     0 !default;
 $header_h2_margin:          $header_h2_margin_top $header_h2_margin_right $header_h2_margin_bottom $header_h2_margin_left !default;
 
-// footer
+// footer =======================================
+//
 $footer_margin_top:         $header_margin_bottom !default;
 $footer_margin_right:       $header_margin_right !default;
 $footer_margin_bottom:      $header_margin_top !default;
@@ -44,15 +51,63 @@ $footer_margin:             $footer_margin_top $footer_margin_right $footer_marg
 $footer_padding:            $header_padding !default;
 $footer_background:         #efefef !default;
 
-// md card
-$card_transition:   all 0.2s ease !default;
-$card_margin:       1rem !default;
-$card_padding:      0.15rem !default;
-$card_border:       2px solid #efefef !default;
-$card_box_shadow:   0rem 0.15rem 0.15rem #aaa !default;
+// logo =========================================
+//
+$logo_max_width:            176px !default;
+$logo_medium_margin:        0 0 1.25rem 0 !default;
 
-$card_medium_margin: 0.75rem !default;
+// md card ======================================
+//
+$card_transition:               all 0.2s ease !default;
+$card_margin:                   1rem !default;
+$card_padding:                  0.15rem !default;
+$card_background:               #fefefe !default;
+$card_border:                   2px solid #efefef !default;
+$card_box_shadow:               0rem 0.15rem 0.15rem #aaa !default;
+
+$card_medium_margin:            0.75rem !default;
 
 $card_hover_margin:             0.75rem !default;
-$card_hover_box_shadow:         0rem 0.33rem 0.33rem #888 !default;
+$card_hover_box_shadow:         0rem 0.33rem 0.5rem #888 !default;
 $card_hover_card_image_filter:  grayscale(0) !default;
+
+$card_info_expanded_button_group_margin_bottom:   0px !default;
+$card_info_text_text_align:                       left !default;
+$card_info_text_padding_top:                      0 !default;
+$card_info_text_padding_right:                    1rem !default;
+$card_info_text_padding_bottom:                   0 !default;
+$card_info_text_padding_left:                     1rem !default;
+$card_info_text_padding:                          $card_info_text_padding_top $card_info_text_padding_right $card_info_text_padding_bottom $card_info_text_padding_left !default;
+
+$card_image_min_height:         337.2px !default;
+$card_image_margin_bottom:      20px !default;
+$card_image_position:           relative !default;
+$card_image_overflow:           hidden !default;
+
+$card_image_padded_padding:     1.5rem !default;
+
+$card_image_width:              100% !default;
+$card_image_filter:             grayscale(1) !default;
+
+// helpers ======================================
+//
+$buffer_top_4_margin_top:           4rem !default;
+$buffer_btm_1_margin_bottom:        1rem !default;
+
+$fa_align_middle_vertical_align:    middle !default;
+
+$medium_text_right_text_align:      right !default;
+$medium_text_left_text_align:       left !default;
+
+// fadein animation =============================
+//
+$fadein_from_opacity:                   0 !default;
+$fadein_from_opacity_ie9:               1\9 !default;
+$fadein_to_opacity:                     1 !default;
+$fadein_animation:                      fadeIn ease-in 1 !default;
+$fadein_animation_fill:                 forwards !default;
+$fadein_animation_duration:             1s !default;
+$fadein_frame_zero_animation_delay:     0.25s !default;
+$fadein_frame_one_animation_delay:      0.5s !default;
+$fadein_frame_two_animation_delay:      0.75s !default;
+$fadein_frame_three_animation_delay:    1s !default;

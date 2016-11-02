@@ -2,10 +2,11 @@ html,
 body {
   font: $global_font !important;
   color: $global_font_color;
+  background: $global_background;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font: $global_font !important;
+  font-family: $global_font_family !important;
 }
 
 h1 {
@@ -16,7 +17,7 @@ h2 {
   font-size: $h2_font_size;
 }
 
-header {
+.header {
   margin: $header_margin;
   padding: $header_padding;
 
@@ -30,9 +31,11 @@ header {
   }
 }
 
-main {}
+.main {
+  // ... no styles needed.
+}
 
-footer {
+.footer {
   margin: $footer_margin;
   padding: $footer_padding;
   background: $footer_background;

@@ -1,5 +1,9 @@
 .logo img {
-  max-width: 176px; }
+  max-width: $logo_max_width;
+  // medium screen and up
   @media screen and (max-width: 40em) {
-    .logo img {
-      margin: 0 0 1.25rem 0; } }
+    & {
+      margin: $logo_medium_margin;
+    }
+  }
+}
