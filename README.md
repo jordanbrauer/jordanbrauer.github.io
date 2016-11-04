@@ -28,3 +28,4 @@ to make continuous changes without running the build command every time.
 * Using Foundation for Sites 6. Thanks Zurb and team for your awesome framework!
 * Using the great font-awesome! Thanks a lot FortAwesome and team for your great icon set.
 * GoogleFonts, Lato font family. Thanks Google for your repository of fonts!
+* [Fabrice Eleven](https://fabriceleven.com/design/creating-fancy-css3-fade-in-animations-on-page-load/) for the css animation code snippet.
