@@ -600,3 +600,559 @@
 
   Foundation.MediaQuery = MediaQuery;
 }(jQuery);
+'use strict';
+
+!function ($) {
+
+  var MutationObserver = function () {
+    var prefixes = ['WebKit', 'Moz', 'O', 'Ms', ''];
+    for (var i = 0; i < prefixes.length; i++) {
+      if (prefixes[i] + 'MutationObserver' in window) {
+        return window[prefixes[i] + 'MutationObserver'];
+      }
+    }
+    return false;
+  }();
+
+  var triggers = function (el, type) {
+    el.data(type).split(' ').forEach(function (id) {
+      $('#' + id)[type === 'close' ? 'trigger' : 'triggerHandler'](type + '.zf.trigger', [el]);
+    });
+  };
+  // Elements with [data-open] will reveal a plugin that supports it when clicked.
+  $(document).on('click.zf.trigger', '[data-open]', function () {
+    triggers($(this), 'open');
+  });
+
+  // Elements with [data-close] will close a plugin that supports it when clicked.
+  // If used without a value on [data-close], the event will bubble, allowing it to close a parent component.
+  $(document).on('click.zf.trigger', '[data-close]', function () {
+    var id = $(this).data('close');
+    if (id) {
+      triggers($(this), 'close');
+    } else {
+      $(this).trigger('close.zf.trigger');
+    }
+  });
+
+  // Elements with [data-toggle] will toggle a plugin that supports it when clicked.
+  $(document).on('click.zf.trigger', '[data-toggle]', function () {
+    triggers($(this), 'toggle');
+  });
+
+  // Elements with [data-closable] will respond to close.zf.trigger events.
+  $(document).on('close.zf.trigger', '[data-closable]', function (e) {
+    e.stopPropagation();
+    var animation = $(this).data('closable');
+
+    if (animation !== '') {
+      Foundation.Motion.animateOut($(this), animation, function () {
+        $(this).trigger('closed.zf');
+      });
+    } else {
+      $(this).fadeOut().trigger('closed.zf');
+    }
+  });
+
+  $(document).on('focus.zf.trigger blur.zf.trigger', '[data-toggle-focus]', function () {
+    var id = $(this).data('toggle-focus');
+    $('#' + id).triggerHandler('toggle.zf.trigger', [$(this)]);
+  });
+
+  /**
+  * Fires once after all other scripts have loaded
+  * @function
+  * @private
+  */
+  $(window).on('load', function () {
+    checkListeners();
+  });
+
+  function checkListeners() {
+    eventsListener();
+    resizeListener();
+    scrollListener();
+    closemeListener();
+  }
+
+  //******** only fires this function once on load, if there's something to watch ********
+  function closemeListener(pluginName) {
+    var yetiBoxes = $('[data-yeti-box]'),
+        plugNames = ['dropdown', 'tooltip', 'reveal'];
+
+    if (pluginName) {
+      if (typeof pluginName === 'string') {
+        plugNames.push(pluginName);
+      } else if (typeof pluginName === 'object' && typeof pluginName[0] === 'string') {
+        plugNames.concat(pluginName);
+      } else {
+        console.error('Plugin names must be strings');
+      }
+    }
+    if (yetiBoxes.length) {
+      var listeners = plugNames.map(function (name) {
+        return 'closeme.zf.' + name;
+      }).join(' ');
+
+      $(window).off(listeners).on(listeners, function (e, pluginId) {
+        var plugin = e.namespace.split('.')[0];
+        var plugins = $('[data-' + plugin + ']').not('[data-yeti-box="' + pluginId + '"]');
+
+        plugins.each(function () {
+          var _this = $(this);
+
+          _this.triggerHandler('close.zf.trigger', [_this]);
+        });
+      });
+    }
+  }
+
+  function resizeListener(debounce) {
+    var timer = void 0,
+        $nodes = $('[data-resize]');
+    if ($nodes.length) {
+      $(window).off('resize.zf.trigger').on('resize.zf.trigger', function (e) {
+        if (timer) {
+          clearTimeout(timer);
+        }
+
+        timer = setTimeout(function () {
+
+          if (!MutationObserver) {
+            //fallback for IE 9
+            $nodes.each(function () {
+              $(this).triggerHandler('resizeme.zf.trigger');
+            });
+          }
+          //trigger all listening elements and signal a resize event
+          $nodes.attr('data-events', "resize");
+        }, debounce || 10); //default time to emit resize event
+      });
+    }
+  }
+
+  function scrollListener(debounce) {
+    var timer = void 0,
+        $nodes = $('[data-scroll]');
+    if ($nodes.length) {
+      $(window).off('scroll.zf.trigger').on('scroll.zf.trigger', function (e) {
+        if (timer) {
+          clearTimeout(timer);
+        }
+
+        timer = setTimeout(function () {
+
+          if (!MutationObserver) {
+            //fallback for IE 9
+            $nodes.each(function () {
+              $(this).triggerHandler('scrollme.zf.trigger');
+            });
+          }
+          //trigger all listening elements and signal a scroll event
+          $nodes.attr('data-events', "scroll");
+        }, debounce || 10); //default time to emit scroll event
+      });
+    }
+  }
+
+  function eventsListener() {
+    if (!MutationObserver) {
+      return false;
+    }
+    var nodes = document.querySelectorAll('[data-resize], [data-scroll], [data-mutate]');
+
+    //element callback
+    var listeningElementsMutation = function (mutationRecordsList) {
+      var $target = $(mutationRecordsList[0].target);
+      //trigger the event handler for the element depending on type
+      switch ($target.attr("data-events")) {
+
+        case "resize":
+          $target.triggerHandler('resizeme.zf.trigger', [$target]);
+          break;
+
+        case "scroll":
+          $target.triggerHandler('scrollme.zf.trigger', [$target, window.pageYOffset]);
+          break;
+
+        // case "mutate" :
+        // console.log('mutate', $target);
+        // $target.triggerHandler('mutate.zf.trigger');
+        //
+        // //make sure we don't get stuck in an infinite loop from sloppy codeing
+        // if ($target.index('[data-mutate]') == $("[data-mutate]").length-1) {
+        //   domMutationObserver();
+        // }
+        // break;
+
+        default:
+          return false;
+        //nothing
+      }
+    };
+
+    if (nodes.length) {
+      //for each element that needs to listen for resizing, scrolling, (or coming soon mutation) add a single observer
+      for (var i = 0; i <= nodes.length - 1; i++) {
+        var elementObserver = new MutationObserver(listeningElementsMutation);
+        elementObserver.observe(nodes[i], { attributes: true, childList: false, characterData: false, subtree: false, attributeFilter: ["data-events"] });
+      }
+    }
+  }
+
+  // ------------------------------------
+
+  // [PH]
+  // Foundation.CheckWatchers = checkWatchers;
+  Foundation.IHearYou = checkListeners;
+  // Foundation.ISeeYou = scrollListener;
+  // Foundation.IFeelYou = closemeListener;
+}(jQuery);
+
+// function domMutationObserver(debounce) {
+//   // !!! This is coming soon and needs more work; not active  !!! //
+//   var timer,
+//   nodes = document.querySelectorAll('[data-mutate]');
+//   //
+//   if (nodes.length) {
+//     // var MutationObserver = (function () {
+//     //   var prefixes = ['WebKit', 'Moz', 'O', 'Ms', ''];
+//     //   for (var i=0; i < prefixes.length; i++) {
+//     //     if (prefixes[i] + 'MutationObserver' in window) {
+//     //       return window[prefixes[i] + 'MutationObserver'];
+//     //     }
+//     //   }
+//     //   return false;
+//     // }());
+//
+//
+//     //for the body, we need to listen for all changes effecting the style and class attributes
+//     var bodyObserver = new MutationObserver(bodyMutation);
+//     bodyObserver.observe(document.body, { attributes: true, childList: true, characterData: false, subtree:true, attributeFilter:["style", "class"]});
+//
+//
+//     //body callback
+//     function bodyMutation(mutate) {
+//       //trigger all listening elements and signal a mutation event
+//       if (timer) { clearTimeout(timer); }
+//
+//       timer = setTimeout(function() {
+//         bodyObserver.disconnect();
+//         $('[data-mutate]').attr('data-events',"mutate");
+//       }, debounce || 150);
+//     }
+//   }
+// }
+'use strict';
+
+!function ($) {
+
+  function Timer(elem, options, cb) {
+    var _this = this,
+        duration = options.duration,
+        //options is an object for easily adding features later.
+    nameSpace = Object.keys(elem.data())[0] || 'timer',
+        remain = -1,
+        start,
+        timer;
+
+    this.isPaused = false;
+
+    this.restart = function () {
+      remain = -1;
+      clearTimeout(timer);
+      this.start();
+    };
+
+    this.start = function () {
+      this.isPaused = false;
+      // if(!elem.data('paused')){ return false; }//maybe implement this sanity check if used for other things.
+      clearTimeout(timer);
+      remain = remain <= 0 ? duration : remain;
+      elem.data('paused', false);
+      start = Date.now();
+      timer = setTimeout(function () {
+        if (options.infinite) {
+          _this.restart(); //rerun the timer.
+        }
+        if (cb && typeof cb === 'function') {
+          cb();
+        }
+      }, remain);
+      elem.trigger('timerstart.zf.' + nameSpace);
+    };
+
+    this.pause = function () {
+      this.isPaused = true;
+      //if(elem.data('paused')){ return false; }//maybe implement this sanity check if used for other things.
+      clearTimeout(timer);
+      elem.data('paused', true);
+      var end = Date.now();
+      remain = remain - (end - start);
+      elem.trigger('timerpaused.zf.' + nameSpace);
+    };
+  }
+
+  /**
+   * Runs a callback function when images are fully loaded.
+   * @param {Object} images - Image(s) to check if loaded.
+   * @param {Func} callback - Function to execute when image is fully loaded.
+   */
+  function onImagesLoaded(images, callback) {
+    var self = this,
+        unloaded = images.length;
+
+    if (unloaded === 0) {
+      callback();
+    }
+
+    images.each(function () {
+      if (this.complete) {
+        singleImageLoaded();
+      } else if (typeof this.naturalWidth !== 'undefined' && this.naturalWidth > 0) {
+        singleImageLoaded();
+      } else {
+        $(this).one('load', function () {
+          singleImageLoaded();
+        });
+      }
+    });
+
+    function singleImageLoaded() {
+      unloaded--;
+      if (unloaded === 0) {
+        callback();
+      }
+    }
+  }
+
+  Foundation.Timer = Timer;
+  Foundation.onImagesLoaded = onImagesLoaded;
+}(jQuery);
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+!function ($) {
+
+  /**
+   * Interchange module.
+   * @module foundation.interchange
+   * @requires foundation.util.mediaQuery
+   * @requires foundation.util.timerAndImageLoader
+   */
+
+  var Interchange = function () {
+    /**
+     * Creates a new instance of Interchange.
+     * @class
+     * @fires Interchange#init
+     * @param {Object} element - jQuery object to add the trigger to.
+     * @param {Object} options - Overrides to the default plugin settings.
+     */
+
+    function Interchange(element, options) {
+      _classCallCheck(this, Interchange);
+
+      this.$element = element;
+      this.options = $.extend({}, Interchange.defaults, options);
+      this.rules = [];
+      this.currentPath = '';
+
+      this._init();
+      this._events();
+
+      Foundation.registerPlugin(this, 'Interchange');
+    }
+
+    /**
+     * Initializes the Interchange plugin and calls functions to get interchange functioning on load.
+     * @function
+     * @private
+     */
+
+
+    _createClass(Interchange, [{
+      key: '_init',
+      value: function _init() {
+        this._addBreakpoints();
+        this._generateRules();
+        this._reflow();
+      }
+
+      /**
+       * Initializes events for Interchange.
+       * @function
+       * @private
+       */
+
+    }, {
+      key: '_events',
+      value: function _events() {
+        $(window).on('resize.zf.interchange', Foundation.util.throttle(this._reflow.bind(this), 50));
+      }
+
+      /**
+       * Calls necessary functions to update Interchange upon DOM change
+       * @function
+       * @private
+       */
+
+    }, {
+      key: '_reflow',
+      value: function _reflow() {
+        var match;
+
+        // Iterate through each rule, but only save the last match
+        for (var i in this.rules) {
+          if (this.rules.hasOwnProperty(i)) {
+            var rule = this.rules[i];
+
+            if (window.matchMedia(rule.query).matches) {
+              match = rule;
+            }
+          }
+        }
+
+        if (match) {
+          this.replace(match.path);
+        }
+      }
+
+      /**
+       * Gets the Foundation breakpoints and adds them to the Interchange.SPECIAL_QUERIES object.
+       * @function
+       * @private
+       */
+
+    }, {
+      key: '_addBreakpoints',
+      value: function _addBreakpoints() {
+        for (var i in Foundation.MediaQuery.queries) {
+          if (Foundation.MediaQuery.queries.hasOwnProperty(i)) {
+            var query = Foundation.MediaQuery.queries[i];
+            Interchange.SPECIAL_QUERIES[query.name] = query.value;
+          }
+        }
+      }
+
+      /**
+       * Checks the Interchange element for the provided media query + content pairings
+       * @function
+       * @private
+       * @param {Object} element - jQuery object that is an Interchange instance
+       * @returns {Array} scenarios - Array of objects that have 'mq' and 'path' keys with corresponding keys
+       */
+
+    }, {
+      key: '_generateRules',
+      value: function _generateRules(element) {
+        var rulesList = [];
+        var rules;
+
+        if (this.options.rules) {
+          rules = this.options.rules;
+        } else {
+          rules = this.$element.data('interchange').match(/\[.*?\]/g);
+        }
+
+        for (var i in rules) {
+          if (rules.hasOwnProperty(i)) {
+            var rule = rules[i].slice(1, -1).split(', ');
+            var path = rule.slice(0, -1).join('');
+            var query = rule[rule.length - 1];
+
+            if (Interchange.SPECIAL_QUERIES[query]) {
+              query = Interchange.SPECIAL_QUERIES[query];
+            }
+
+            rulesList.push({
+              path: path,
+              query: query
+            });
+          }
+        }
+
+        this.rules = rulesList;
+      }
+
+      /**
+       * Update the `src` property of an image, or change the HTML of a container, to the specified path.
+       * @function
+       * @param {String} path - Path to the image or HTML partial.
+       * @fires Interchange#replaced
+       */
+
+    }, {
+      key: 'replace',
+      value: function replace(path) {
+        if (this.currentPath === path) return;
+
+        var _this = this,
+            trigger = 'replaced.zf.interchange';
+
+        // Replacing images
+        if (this.$element[0].nodeName === 'IMG') {
+          this.$element.attr('src', path).on('load', function () {
+            _this.currentPath = path;
+          }).trigger(trigger);
+        }
+        // Replacing background images
+        else if (path.match(/\.(gif|jpg|jpeg|png|svg|tiff)([?#].*)?/i)) {
+            this.$element.css({ 'background-image': 'url(' + path + ')' }).trigger(trigger);
+          }
+          // Replacing HTML
+          else {
+              $.get(path, function (response) {
+                _this.$element.html(response).trigger(trigger);
+                $(response).foundation();
+                _this.currentPath = path;
+              });
+            }
+
+        /**
+         * Fires when content in an Interchange element is done being loaded.
+         * @event Interchange#replaced
+         */
+        // this.$element.trigger('replaced.zf.interchange');
+      }
+
+      /**
+       * Destroys an instance of interchange.
+       * @function
+       */
+
+    }, {
+      key: 'destroy',
+      value: function destroy() {
+        //TODO this.
+      }
+    }]);
+
+    return Interchange;
+  }();
+
+  /**
+   * Default settings for plugin
+   */
+
+
+  Interchange.defaults = {
+    /**
+     * Rules to be applied to Interchange elements. Set with the `data-interchange` array notation.
+     * @option
+     */
+    rules: null
+  };
+
+  Interchange.SPECIAL_QUERIES = {
+    'landscape': 'screen and (orientation: landscape)',
+    'portrait': 'screen and (orientation: portrait)',
+    'retina': 'only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx)'
+  };
+
+  // Window exports
+  Foundation.plugin(Interchange, 'Interchange');
+}(jQuery);
