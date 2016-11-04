@@ -10,13 +10,12 @@
   box-shadow: $card_box_shadow;
   background: $card_background;
 
-  // medium an up screens
   @media screen and (min-width: 40em) {
     margin: $card_medium_margin;
   }
 
   &:hover {
-    margin: $card_hover_margin;
+    // margin: $card_hover_margin;
     box-shadow: $card_hover_box_shadow;
 
     .card-image img {
@@ -31,6 +30,10 @@
     margin-bottom: $card_info_expanded_button_group_margin_bottom;
   }
 
+  .card-info-header {
+    font-size: $card_info_header_font_size;
+  }
+
   .card-info-text {
     text-align: $card_info_text_text_align;
     padding: $card_info_text_padding;
@@ -38,7 +41,7 @@
 }
 
 .card-image {
-  min-height: $card_image_min_height;
+  // min-height: $card_image_min_height;
   margin-bottom: $card_image_margin_bottom;
   position: $card_image_position;
   overflow: $card_image_overflow;
@@ -53,6 +56,7 @@
     -webkit-filter: $card_image_filter;
     filter: $card_image_filter;
     width: $card_image_width;
+    height: $card_image_height;
   }
 
 }

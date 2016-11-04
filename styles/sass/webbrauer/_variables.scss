@@ -1,12 +1,12 @@
 // global =======================================
 //
-$global_background:         url(../images/bg/mdn_blueprint.png) top center #fafbfc !default;
+$global_background:         url(../images/bg/grid.png) top center #fafbfc !default;
 
 $global_font_path:          'https://fonts.googleapis.com/css?family=Lato:300,400,700' !default;
 $global_font_style:         normal !default;
 $global_font_variant:       normal !default;
 $global_font_weight:        normal !default;
-$global_font_size:          1rem !default;
+$global_font_size:          0.90rem !default;
 $global_font_line_height:   normal !default;
 $global_font_family:        'Lato', sans-serif !default;
 $global_font_color:         #888 !default;
@@ -49,6 +49,8 @@ $footer_margin_left:        $header_margin_left !default;
 $footer_margin:             $footer_margin_top $footer_margin_right $footer_margin_bottom $footer_margin_left !default;
 
 $footer_padding:            $header_padding !default;
+
+$footer_h4_font_size:       1rem !default;
 $footer_background:         #efefef !default;
 
 // logo =========================================
@@ -60,18 +62,20 @@ $logo_medium_margin:        0 0 1.25rem 0 !default;
 //
 $card_transition:               all 0.2s ease !default;
 $card_margin:                   1rem !default;
+$card_medium_margin:            0.75rem !default;
 $card_padding:                  0.15rem !default;
 $card_background:               #fefefe !default;
 $card_border:                   2px solid #efefef !default;
 $card_box_shadow:               0rem 0.15rem 0.15rem #aaa !default;
 
-$card_medium_margin:            0.75rem !default;
-
 $card_hover_margin:             0.75rem !default;
-$card_hover_box_shadow:         0rem 0.33rem 0.5rem #888 !default;
+$card_hover_box_shadow:         0rem 0.33rem 0.5rem #999 !default;
 $card_hover_card_image_filter:  grayscale(0) !default;
 
 $card_info_expanded_button_group_margin_bottom:   0px !default;
+
+$card_info_header_font_size:                      1.2rem !default;
+
 $card_info_text_text_align:                       left !default;
 $card_info_text_padding_top:                      0 !default;
 $card_info_text_padding_right:                    1rem !default;
@@ -87,6 +91,7 @@ $card_image_overflow:           hidden !default;
 $card_image_padded_padding:     1.5rem !default;
 
 $card_image_width:              100% !default;
+$card_image_height:             auto !default;
 $card_image_filter:             grayscale(1) !default;
 
 // helpers ======================================

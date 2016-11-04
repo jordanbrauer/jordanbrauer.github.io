@@ -3,10 +3,20 @@ body {
   font: $global_font !important;
   color: $global_font_color;
   background: $global_background;
+
+  @media screen and (min-width: 40em) {
+    // font: $global_medium_font;
+  }
 }
 
 .grid {
   // ... no styles needed.
+  // ... semantic use for now.
+}
+
+.container {
+  // ... no styles needed.
+  // ... semantic use for now.
 }
 
 .header {
@@ -25,12 +35,17 @@ body {
 
 .main {
   // ... no styles needed.
+  // ... semantic use for now.
 }
 
 .footer {
   margin: $footer_margin;
   padding: $footer_padding;
   background: $footer_background;
+
+  h4 {
+    font-size: $footer_h4_font_size;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {

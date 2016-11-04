@@ -1,0 +1,24 @@
+/** Web Brauer SCSS Framework
+ *|
+ *| Version: 0.0.1
+ *| Author: Jordan Brauer <jbrauer.inc@gmail.com>
+ *| License: MIT Open Source
+ *|
+ *| Have some ideas for a SCSS framework and will realse this
+ *| as a separate project. This is a tiny start to it however.
+ */
+
+// core
+@import 'variables';
+@import 'global';
+
+// components
+@import 'components/typography';
+@import 'components/logo';
+@import 'components/card';
+
+// animations
+@import 'animations/fadein';
+
+// helpers
+@import 'helpers';

@@ -1,16 +1,14 @@
 /** Custom Foundation6 Styles
+ *|
+ *| Downloaded from custom css configuration page,
+ *| http://foundation.zurb.com/sites/download.html/#customizeFoundation
  */
+
 // everything
 @import 'foundation6-custom/foundation';
 
-/** Jordan Brauer Styles
+/** Web Brauer Styles
  */
-@import 'jbrauer/variables';
-@import 'jbrauer/global';
 
-@import 'jbrauer/components/typography';
-@import 'jbrauer/components/logo';
-@import 'jbrauer/components/card';
-@import 'jbrauer/components/helpers';
-
-@import 'jbrauer/animations/fadein';
+// everything
+@import 'webbrauer/webbrauer';
