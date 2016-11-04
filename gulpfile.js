@@ -15,8 +15,8 @@ gulp.task('clean:images', () => del('./assets/images/**/*.{png, ,jpg, jpeg}'));
 // concat scripts tasks
 gulp.task('concat:scripts', ['clean:scripts'], () => {
   const stream = gulp.src([
-    './scripts/vendor/jquery.min.js',
-    './scripts/vendor/foundation.min.js'
+    './scripts/jquery.min.js',
+    './scripts/foundation.min.js'
   ]).pipe(concat('app.min.js'))
     .pipe(gulp.dest('./assets/scripts'));
 
@@ -25,7 +25,7 @@ gulp.task('concat:scripts', ['clean:scripts'], () => {
 
 // compile expanded sass task
 gulp.task('expand:sass', ['clean:styles'], () => {
-  const stream = gulp.src('./styles/sass/app.scss')
+  const stream = gulp.src('./styles/app.scss')
     .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
     .pipe(gulp.dest('./assets/styles'));
 
@@ -34,7 +34,7 @@ gulp.task('expand:sass', ['clean:styles'], () => {
 
 // compile mini sass task
 gulp.task('minify:sass', ['clean:styles'], () => {
-  const stream = gulp.src('./styles/sass/app.scss')
+  const stream = gulp.src('./styles/app.scss')
     .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
     .pipe(rename(path => path.basename += '.min'))
     .pipe(gulp.dest('./assets/styles'));
