@@ -1,0 +1,17 @@
+{
+  "name": "jorb-portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio & network hub for my personal brand",
+  "main": "index.html",
+  "repository": "https://github.com/jordanbrauer/portfolio",
+  "author": "jordanbrauer <jbrauer.inc@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "aos": "^2.2.0",
+    "bulma": "^0.6.0",
+    "hamburgers": "^0.9.1",
+    "pace-js": "^1.0.2",
+    "spinkit": "^1.2.5"
+  }
+}
