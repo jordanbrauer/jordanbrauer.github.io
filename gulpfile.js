@@ -3,7 +3,7 @@ const gulp = require('gulp');
 const del = require('del');
 const concat = require('gulp-concat');
 const rename = require('gulp-rename');
-const sass = require('gulp-sass');
+// const sass = require('gulp-sass');
 const imgMin = require('gulp-imagemin');
 const imgResize = require('gulp-image-resize');
 
